@@ -37,11 +37,14 @@ router.get('/signup', (req, res) => {
   res.render('signup', { title: 'Sign-Up Page' });
 });
 
-router.get('/addtrip', (req, res) => {
-  res.render('addtrip', { title: 'Add Trip Page' });
+router.get('/addtrip', withAuth, (req, res) => {
+  res.render('addtrip', { 
+    title: 'Add Trip Page',
+    isLoggedIn: req.session.isLoggedIn
+  });
 });
 
-router.get('/trip/:id', (req, res) => {
+router.get('/trip/:id', withAuth, (req, res) => {
   res.render('trip', { title: 'Trip Page' });
 });
 
