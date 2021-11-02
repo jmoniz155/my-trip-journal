@@ -1,2 +1,2 @@
--- drop database if exists DB_NAME;
+drop database if exists traveler_db;
 create database traveler_db;

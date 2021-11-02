@@ -1,6 +1,6 @@
 const router = require('express').Router();
 const { User } = require('../models');
-
+const withAuth = require('../util/withAuth')
 // use withAuth middleware to redirect from protected routes.
 // const withAuth = require("../util/withAuth");
 
@@ -9,7 +9,7 @@ const { User } = require('../models');
 //   // ...
 // });
 
-router.get('/', async (req, res) => {
+router.get('/', withAuth ,  async (req, res) => {
   try {
     let user;
     if (req.session.isLoggedIn) {
