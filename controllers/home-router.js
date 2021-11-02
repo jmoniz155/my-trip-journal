@@ -37,4 +37,16 @@ router.get('/signup', (req, res) => {
   res.render('signup', { title: 'Sign-Up Page' });
 });
 
+router.get('/addtrip', (req, res) => {
+  res.render('addtrip', { title: 'Add Trip Page' });
+});
+
+router.get('/trip/:id', (req, res) => {
+  res.render('trip', { title: 'Trip Page' });
+});
+
+// CURRENTLY LOGOUT DOES NOT WORK - when the user clicks the logout button,
+// they should be redirected to the home page but with their session ended
+// therefore they should see the sign in or sign up option
+
 module.exports = router;
