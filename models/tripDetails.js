@@ -26,7 +26,10 @@ tripDetails.init(
         food: {
             type: DataTypes.STRING,
             allowNull: false,
-            reference
+            references: {
+                model: 'trip',
+                key: 'id',
+              },
           },
         experience: {
             type: DataTypes.STRING,
@@ -52,5 +55,14 @@ tripDetails.init(
                 key: 'id',
               },
         }
-    }
+    },
+    {
+        sequelize,
+        timestamps: false,
+        freezeTableName: true,
+        underscored: true,
+        modelName: "tripDetails",
+      }
 )
+
+module.exports = tripDetails
