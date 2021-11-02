@@ -4,7 +4,7 @@ const sequelize = require("../config/connection");
 
 
 
-class trip extends Model {};
+class Trip extends Model {};
 
 
 
@@ -35,8 +35,8 @@ trip.init(
     timestamps: false,
     freezeTableName: true,
     underscored: true,
-    modelName: "User",
+    modelName: "Trip",
   }
 );
 
-module.exports = trip;
+module.exports = Trip;
