@@ -8,7 +8,7 @@ class Trip extends Model {};
 
 
 
-trip.init(
+Trip.init(
   {
   id: {
       type: DataTypes.INTEGER,

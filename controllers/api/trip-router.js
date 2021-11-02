@@ -8,7 +8,7 @@ router.post("/", async (req, res) => {
         user_id: req.session.user_id,
       });
   
-      res.status(200).json(newProject);
+      res.status(200).json(newTrip);
     } catch (err) {
       res.status(400).json(err);
     }
