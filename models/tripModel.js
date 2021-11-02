@@ -4,11 +4,11 @@ const sequelize = require("../config/connection");
 
 
 
-class tripModel extends Model {}
+class Trip extends Model {}
 
 
 
-tripModel.init(
+Trip.init(
   {
   id: {
       type: DataTypes.INTEGER,
@@ -35,8 +35,8 @@ tripModel.init(
     timestamps: false,
     freezeTableName: true,
     underscored: true,
-    modelName: "User",
+    modelName: "Trip",
   }
 );
 
-module.exports = tripModel
+module.exports = Trip
