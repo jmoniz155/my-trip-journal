@@ -6,7 +6,7 @@ class tripComments extends Model {};
 tripComments.init(
     {
         id: {
-            type: DataTypes.INTERGER,
+            type: DataTypes.INTEGER,
             allowNull: false,
             primaryKey: true,
             autoIncrement: true,
@@ -21,7 +21,7 @@ tripComments.init(
       timestamps: false,
       freezeTableName: true,
       underscored: true,
-      modelName: "User",
+      modelName: "tripComments",
     }
 )
 
