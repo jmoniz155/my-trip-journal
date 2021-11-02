@@ -1,6 +1,6 @@
 const router = require('express').Router();
 const { User } = require('../models');
-
+const withAuth = require('../util/withAuth')
 // use withAuth middleware to redirect from protected routes.
 // const withAuth = require("../util/withAuth");
 
@@ -9,7 +9,7 @@ const { User } = require('../models');
 //   // ...
 // });
 
-router.get('/', async (req, res) => {
+router.get('/', withAuth ,  async (req, res) => {
   try {
     let user;
     if (req.session.isLoggedIn) {
@@ -36,5 +36,20 @@ router.get('/login', (req, res) => {
 router.get('/signup', (req, res) => {
   res.render('signup', { title: 'Sign-Up Page' });
 });
+
+router.get('/addtrip', withAuth, (req, res) => {
+  res.render('addtrip', { 
+    title: 'Add Trip Page',
+    isLoggedIn: req.session.isLoggedIn
+  });
+});
+
+router.get('/trip/:id', withAuth, (req, res) => {
+  res.render('trip', { title: 'Trip Page' });
+});
+
+// CURRENTLY LOGOUT DOES NOT WORK - when the user clicks the logout button,
+// they should be redirected to the home page but with their session ended
+// therefore they should see the sign in or sign up option
 
 module.exports = router;
