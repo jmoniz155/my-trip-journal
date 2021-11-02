@@ -23,7 +23,7 @@
               <a class="nav-link" href="/addtrip">Add a Trip</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="/logout">Log Out</a>
+              <a class="nav-link btn-logout" href="/api/users/logout">Log Out</a>
             </li>
           {{else}}
             <li class="nav-item">
@@ -37,8 +37,5 @@
       </div>
     </nav>
     {{{body}}}
-    {{#if isLoggedIn}}
-      <script src='/js/logout.js'></script>
-    {{/if}}
   </body>
 </html>
