@@ -14,6 +14,13 @@ tripComments.init(
         comments: {
             type: DataTypes.STRING,
             allowNull: false,
+        },
+        trip_id: {
+            type: DataTypes.INTEGER,
+            references: {
+              model: 'trip',
+              key: 'id',
+            }
         }
     },
     {
