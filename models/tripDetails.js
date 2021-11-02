@@ -13,7 +13,7 @@ tripDetails.init(
             autoIncrement: true,
           },
         rating: {
-            type: DataTypes.Sequelize.DECIMAL(10, 2), 
+            type: DataTypes.DECIMAL(10, 2), 
             allowNull: false,
             validate: {
                 isDecimal: true
@@ -40,7 +40,7 @@ tripDetails.init(
               },          
         },
         lesson: {
-            rtpe: DataTypes.STRING,
+            type: DataTypes.STRING,
             allowNull: false,
             references: {
                 model: 'trip',
