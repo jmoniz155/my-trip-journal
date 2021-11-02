@@ -5,7 +5,7 @@ const tripComments = require('./tripComments')
 
 // Define sequelize associations in this file.
 
-Trip.hasOne(tripDetails. {
+Trip.hasOne(tripDetails, {
     foreignKey: "trip_id",
     onDelete: "CASCADE",
 })
