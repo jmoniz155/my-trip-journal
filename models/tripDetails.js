@@ -18,42 +18,29 @@ tripDetails.init(
             validate: {
                 isDecimal: true
             },
-            references: {
-                model: 'trip',
-                key: 'id',
-              },
           },
         food: {
             type: DataTypes.STRING,
             allowNull: false,
-            references: {
-                model: 'trip',
-                key: 'id',
-              },
           },
         experience: {
             type: DataTypes.STRING,
-            allowNull: false,
-            references: {
-                model: 'trip',
-                key: 'id',
-              },          
+            allowNull: false,       
         },
         lesson: {
             type: DataTypes.STRING,
             allowNull: false,
-            references: {
-                model: 'trip',
-                key: 'id',
-              },
         },
         revisit: {
             type: DataTypes.BOOLEAN,
             allowNull: false,
+        },
+        trip_id: {
+            type: DataTypes.INTEGER,
             references: {
-                model: 'trip',
-                key: 'id',
-              },
+              model: 'trip',
+              key: 'id',
+            }
         }
     },
     {
