@@ -1,10 +1,33 @@
-{{!-- This page will have the list of my trips and the option to add a trip --}}
-{{!-- {{#if isLoggedIn}} --}}
-<div style="class: container">
+{{#if isLoggedIn}}
+<div class="container" style="text-align: center;">
   <h1>myTripJournal</h1>
   <h2>Welcome, {{user.username}}!</h2>
-  <div class="card" style="width: 18rem;">
+  <div class="card" style="text-align: left;">
     {{> home-details}}
   </div>
 </div>
-{{!-- {{/if}} --}}
+{{else}}
+
+<div class="container">
+  <div class="row justify-content-center">
+    <div class="col-md-7 col-sm-9">
+      <h1>myTripJournal</h1>
+      <p style="text-align: center">In search of a way to log your recent trips? With myTripJournal the hard work is done for you!
+        Document your meaningful memories and create interesting trip memoirs simply and easily.
+      </p>
+      <div class="row" style="text-align: center">
+        <div class="col-6">
+          <a class="btn" href="/signup">Sign Up</a>
+        </div>
+        <div class="col-6">
+          <a class="btn" href="/login">Log In</a>
+        </div>
+        {{!-- <ul class="list-group list-group-flush">
+          <li class="list-group-item"><a href="/signup">Sign Up</a></li>
+          <li class="list-group-item"><a href="/login">Log In</a></li>
+        </ul> --}}
+      </div>
+    </div>
+  </div>
+</div>
+{{/if}}

@@ -4,7 +4,7 @@ const sequelize = require("../config/connection");
 
 
 
-class Trip extends Model {};
+class Trip extends Model {}
 
 
 
@@ -39,4 +39,4 @@ Trip.init(
   }
 );
 
-module.exports = Trip;
+module.exports = Trip

@@ -1,13 +1,17 @@
 const router = require('express').Router();
-const { User, Trip } = require('../../models');
+const { User, Trip, } = require('../../models');
 
 router.post("/", async (req, res) => {
     try {
+      const startDate = document.querySelectorAll('#')
+      const location = document.querySelectorAll('#')
+
+
+
       const newTrip = await Trip.create({
-        ...req.body,
+        Trip.location = location
         user_id: req.session.user_id,
       });
-  
       res.status(200).json(newTrip);
     } catch (err) {
       res.status(400).json(err);
