@@ -1,5 +1,4 @@
 const router = require('express').Router();
-const { tripComments } = require('../../models');
 const usersRouter = require('./users-router');
 const trip_details = require('./trip-details');
 const trip = require('./trip-page_6');

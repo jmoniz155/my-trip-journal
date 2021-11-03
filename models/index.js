@@ -1,16 +1,16 @@
 const User = require('./User');
 const Trip = require('./tripModel')
-const tripDetails = require('./tripDetails')
-const tripComments = require('./tripComments')
+const TripDetails = require('./tripDetails')
+const TripComments = require('./tripComments')
 
 // Define sequelize associations in this file.
 
-Trip.hasOne(tripDetails, {
+Trip.hasOne(TripDetails, {
     foreignKey: "trip_id",
     onDelete: "CASCADE",
 })
 
-Trip.hasMany(tripComments, {
+Trip.hasMany(TripComments, {
     foreignKey: "trip_id",
     onDelete: "CASCADE",
   });
@@ -24,14 +24,16 @@ Trip.belongsTo(User, {
     foreignKey: "user_id",
     onDelete: "CASCADE",
 });
-tripDetails.belongsTo(Trip, {
+
+TripDetails.belongsTo(Trip, {
     foreignKey: "trip_id",
     onDelete: "CASCADE",
 });
-tripComments.belongsTo(Trip, {
+
+TripComments.belongsTo(Trip, {
     foreignKey: "trip_id",
     onDelete: "CASCADE",
 });
 
 
-module.exports = { User, Trip, tripComments, tripDetails };
+module.exports = { User, Trip, TripComments, TripDetails };

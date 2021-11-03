@@ -1,7 +1,8 @@
 const router = require('express').Router();
-const { Trip, tripDetails, tripComments} = require('../../models');
+const { Trip, TripDetails, TripComments } = require('../../models');
 const withAuth = require("../../util/withAuth")
 router.post("/", withAuth, async (req, res) => {
+  console.log("hello there");
     try {
       const newTrip = await Trip.create({
         location: req.body.location,
@@ -9,7 +10,7 @@ router.post("/", withAuth, async (req, res) => {
         endDate:  req.body.endDate,
         user_id: req.session.userId,
       });
-      await newTrip.addtripDetails({
+      await newTrip.addTripDetails({
         rating: req.body.rating,
         food: req.body.food,
         experience: req.body.experience,
@@ -49,7 +50,7 @@ router.get('/', async (req, res) => {
 router.get('/:id', async (req, res) => {
   try {
     const tripDetailsData = await Trip.findByPk(req.params.id, {
-      include: [{ model: tripDetails, tripComments }],
+      include: [{ model: TripDetails, TripComments }],
     });
 
     if (!tripDetailsData) {
