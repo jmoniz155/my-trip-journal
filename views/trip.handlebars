@@ -1,32 +1,63 @@
-{{!-- This includes the content for each trip. the comments partial relates to this page --}}
-
 <div class="container">
-    <h1>Trip</h1>
+  <h1>My New York Trip</h1>
     
-    <div class="row row1">
-        <!--  IMAGE -->
-        <!--  in docs picture size something like data.src.large -->
-        <!-- const imgUrl = ""  -->
-        <img class="tripImage" src=imgUrl>
-    </div>
-    
-    <div class="row row2">
-        <!-- Location, Dates, Rating -->
-        <div class="col">Location</div>
-        <div class="col">Dates</div>
-        <div class="col">Rating</div>
-    </div>
+  {{!-- <div class="row row1">
+    <img class="tripImage" style="width: 100%"src="https://imagesvc.meredithcorp.io/v3/mm/image?q=85&c=sc&poi=face&w=1800&h=900&url=https%3A%2F%2Fstatic.onecms.io%2Fwp-content%2Fuploads%2Fsites%2F28%2F2021%2F02%2F19%2Fnew-york-city-evening-NYCTG0221.jpg">
+  </div> --}}
+<div class="container">
+      <div class="header">
+        {{!-- <form>
+          <input type="text" placeholder="Search">
+          <ion-icon name="search-outline"></ion-icon>
+        </form> --}}
+      </div>
+      <div class="gallery">
         
-        <!-- 5 star rating how would i implement this into the rating from mdbootstrap.com-->
+      </div>
+      <a class="load-more" data-img="curated"></a>
+    </div>
 
-    <div class="container">
-  <span id="rateMe2"  class="empty-stars"></span>
-</div>
+  <br>
 
-`       <!-- rating.js file this is from mdbootstrap.com-->
-<script src="js/addons/rating.js"></script>
+  <div class="row row2" style="text-align: center">   
+    <div class="col">New York City</div>
+    <div class="col">6/1/2021 - 6/15-2021</div>
+    <div class="col">4/5</div>
+  </div>
+
+  <br>
 
     <div class="row row3">
+      <div class="card">
+        <ul class="list-group list-group-flush">
+          <li class="list-group-item">The best food I ate was Falafel.</li>
+          <li class="list-group-item">The most unexpected experience was running into an old friend!</li>
+          <li class="list-group-item">I learned how important it is to hydrate while standing in line at a museum.</li>
+          <li class="list-group-item">I will definitely go back.</li>
+        </ul>
+      </div>
+    </div>
+
+    <br>
+    
+    <div class="row row4">
+      {{> comment}}
+    </div>
+ 
+    <br>
+
+    <form>
+      <div class="form-group">
+        <label for="formGroupExampleInput1">Do you have any further comments?</label>
+        <input type="text" class="form-control" id="formGroupExampleInput1">
+      </div>
+      <button type="submit" class="btn btn-primary">Submit</button>
+    </form>
+    
+</div>
+
+
+    {{!-- <div class="row row3">
         <!--  Answers -->
         <ul>
             <li>{{tripDetails.food}}</li>
@@ -34,8 +65,4 @@
             <li>{{tripDetails.lesson}}</li>
             <li>{{tripDetails.food}}</li>
         </ul>
-    </div>
-
-</div>
-<script src="/public/js/destination.js"></script>
-<script src='/js/trip.js'></script>
+    </div> --}}
