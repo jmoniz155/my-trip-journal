@@ -4,7 +4,7 @@ const { tripComments, Trip } = require('../../models');
 router.get('/', async (req, res) => {
     try {
       const tripCommentsData = await tripComments.findAll({
-        req.body,
+        include: [{ model: Trip }, ],
       });
       res.status(200).json(tripCommentsData);
     } catch (err) {
@@ -33,7 +33,8 @@ router.get('/:id', async (req, res) => {
 router.post('/', async (req, res) => {
     try {
       const tripCommentsData = await tripComments.create({
-        tripComments_id: req.body.tripComments_id,
+        comments: req.body.comments,
+        trip_id: req.body  //need update to match front end
       });
       res.status(200).json(tripCommentsData);
     } catch (err) {

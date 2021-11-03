@@ -1,9 +1,22 @@
 const router = require('express').Router();
 const { Trip, tripDetails, tripComments} = require('../../models');
-
-router.post("/", async (req, res) => {
+const withAuth = require("../../util/withAuth")
+router.post("/", withAuth, async (req, res) => {
     try {
-      const newTrip = await Trip.create(req.body);
+      const newTrip = await Trip.create({
+        location: req.body.location,
+        startDate:  req.body.startDate,
+        endDate:  req.body.endDate,
+        user_id: req.session.userId,
+      });
+      await newTrip.addtripDetails({
+        rating: req.body.rating,
+        food: req.body.food,
+        experience: req.body.experience,
+        lesson:  req.body.lesson,
+        revisit: req.body.revisit,
+        
+      })
       res.status(200).json(newTrip);
     } catch (err) {
       res.status(400).json(err);
