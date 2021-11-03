@@ -10,16 +10,17 @@ router.post("/", withAuth, async (req, res) => {
         endDate:  req.body.endDate,
         user_id: req.session.userId,
       });
-      await newTrip.addTripDetails({
+      const newTripDetails = await TripDetails.create({
         rating: req.body.rating,
         food: req.body.food,
         experience: req.body.experience,
         lesson:  req.body.lesson,
         revisit: req.body.revisit,
-        
+        trip_id: newTrip.id
       })
-      res.status(200).json(newTrip);
+      res.status(200).json({...newTrip, ...newTripDetails});
     } catch (err) {
+      console.log(err);
       res.status(400).json(err);
     }
   });
