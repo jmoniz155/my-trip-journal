@@ -20,8 +20,18 @@ User.hasMany(Trip, {
     onDelete: "CASCADE",
 });
 
-
-
+Trip.belongsTo(User, {
+    foreignKey: "trip_id",
+    onDelete: "CASCADE",
+});
+tripDetails.belongsTo(Trip, {
+    foreignKey: "trip_id",
+    onDelete: "CASCADE",
+});
+tripComments.belongsTo(Trip, {
+    foreignKey: "trip_id",
+    onDelete: "CASCADE",
+});
 
 
 module.exports = { User, Trip, tripComments, tripDetails };
