@@ -4,7 +4,7 @@ const { tripComments, Trip } = require('../../models');
 router.get('/', async (req, res) => {
     try {
       const tripCommentsData = await tripComments.findAll({
-        include: [{ model: Trip }],
+        req.body,
       });
       res.status(200).json(tripCommentsData);
     } catch (err) {
