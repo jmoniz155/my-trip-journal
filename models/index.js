@@ -21,7 +21,7 @@ User.hasMany(Trip, {
 });
 
 Trip.belongsTo(User, {
-    foreignKey: "trip_id",
+    foreignKey: "user_id",
     onDelete: "CASCADE",
 });
 tripDetails.belongsTo(Trip, {
