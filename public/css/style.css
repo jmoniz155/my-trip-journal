@@ -1,5 +1,36 @@
+:root {
+  --color-one: #eae7dc;
+  --color-two: #d8c3a5;
+  --color-three: #8e8d8a;
+  --color-four: #e98074;
+  --color-five: #e85a4f;
+}
+
+body {
+  background-color: var(--color-one);
+}
+
+nav {
+  margin-bottom: 15px;
+}
+
+a {
+  color: var(--color-four);
+}
+
+a:hover {
+  text-decoration: none;
+  color: var(--color-five);
+}
+
+h1 {
+  color: var(--color-five);
+  text-align: center;
+  margin-bottom: 15px
+}
+
 .btn {
-  background-color: #008cba;
+  background-color: var(--color-five);
   border: none;
   color: white;
   padding: 15px 32px;
@@ -8,10 +39,14 @@
   display: inline-block;
   font-size: 16px;
   cursor: pointer;
+  width: 100%;
+  line-height: 1;
 }
 
 .btn-logout {
-  padding: 10px 28px;
-  background-color: #e7e7e7;
   color: black;
+}
+
+.light {
+  color: var(--color-three)
 }
