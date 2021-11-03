@@ -46,7 +46,9 @@ router.get('/addtrip', withAuth, (req, res) => {
 
 // THIS ONE WILL NEED TO BE CHANGED TO /TRIP/:ID BUT RIGHT NOW THIS IS FOR THE PLACEHOLDER
 router.get('/trip', withAuth, (req, res) => {
-  res.render('trip', { title: 'Trip Page' });
+  res.render('trip', { 
+    title: 'Trip Page', isLoggedIn: req.session.isLoggedIn 
+  });
 });
 
 module.exports = router;

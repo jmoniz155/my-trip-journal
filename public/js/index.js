@@ -1,6 +1,6 @@
 class PhotoGallery{
     constructor(){
-      
+      this.API_KEY="563492ad6f917000010000014087bf308d61417fada3aa20de53ca31"
       this.galleryDIv = document.querySelector('.gallery');
       this.searchForm = document.querySelector('.header form');
       this.loadMore = document.querySelector('.load-more');
@@ -36,7 +36,7 @@ class PhotoGallery{
         item.classList.add('item');
         item.innerHTML = `
         <a href='${photo.src.original}'>
-          <img src="${photo.src.medium}">
+          <img src="${photo.src.medium}" class="w-100">
           <h3>${photo.photographer}</h3>
         </a>
         `;
