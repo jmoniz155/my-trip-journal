@@ -32,7 +32,7 @@ tripDetails.init(
             allowNull: false,
         },
         revisit: {
-            type: DataTypes.BOOLEAN,
+            type: DataTypes.STRING,
             allowNull: false,
         },
         trip_id: {
