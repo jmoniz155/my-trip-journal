@@ -1,2 +1,40 @@
 {{!-- This includes the content for each trip. the comments partial relates to this page --}}
-<h1>Trip Page</h1>
+
+<div class="container">
+    <h1>Trip</h1>
+    
+    <div class="row row1">
+        <!--  IMAGE -->
+        <!--  in docs picture size something like data.src.large -->
+        <!-- const imgUrl = ""  -->
+        <img class="tripImage" src=imgUrl>
+    </div>
+    
+    <div class="row row2">
+        <!-- Location, Dates, Rating -->
+        <div class="col">Location</div>
+        <div class="col">Dates</div>
+        <div class="col">Rating</div>
+    </div>
+        
+        <!-- 5 star rating how would i implement this into the rating from mdbootstrap.com-->
+
+    <div class="container">
+  <span id="rateMe2"  class="empty-stars"></span>
+</div>
+
+`       <!-- rating.js file this is from mdbootstrap.com-->
+<script src="js/addons/rating.js"></script>
+
+    <div class="row row3">
+        <!--  Answers -->
+        <ul>
+            <li>{{tripDetails.food}}</li>
+            <li>{{tripDetails.experience}}</li>
+            <li>{{tripDetails.lesson}}</li>
+            <li>{{tripDetails.food}}</li>
+        </ul>
+    </div>
+
+</div>
+<script src='/js/trip.js'></script>
