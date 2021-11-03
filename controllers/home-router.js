@@ -44,12 +44,9 @@ router.get('/addtrip', withAuth, (req, res) => {
   });
 });
 
-router.get('/trip/:id', withAuth, (req, res) => {
+// THIS ONE WILL NEED TO BE CHANGED TO /TRIP/:ID BUT RIGHT NOW THIS IS FOR THE PLACEHOLDER
+router.get('/trip', withAuth, (req, res) => {
   res.render('trip', { title: 'Trip Page' });
 });
-
-// CURRENTLY LOGOUT DOES NOT WORK - when the user clicks the logout button,
-// they should be redirected to the home page but with their session ended
-// therefore they should see the sign in or sign up option
 
 module.exports = router;
