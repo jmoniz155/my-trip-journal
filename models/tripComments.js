@@ -1,9 +1,9 @@
 const { Model, DataTypes } = require("sequelize");
 const sequelize = require("../config/connection");
 
-class tripComments extends Model {};
+class TripComments extends Model {};
 
-tripComments.init(
+TripComments.init(
     {
         id: {
             type: DataTypes.INTEGER,
@@ -18,7 +18,7 @@ tripComments.init(
         trip_id: {
             type: DataTypes.INTEGER,
             references: {
-              model: 'trip',
+              model: 'Trip',
               key: 'id',
             }
         }
@@ -28,8 +28,8 @@ tripComments.init(
       timestamps: false,
       freezeTableName: true,
       underscored: true,
-      modelName: "tripComments",
+      modelName: "TripComments",
     }
 )
 
-module.exports = tripComments;
+module.exports = TripComments;

@@ -1,10 +1,10 @@
 const router = require('express').Router();
-const { User, Trip, tripDetails, } = require('../../models');
+const { Trip, TripDetails, } = require('../../models');
 
 //grabbbing all tripDetails
 router.get('/', async (req, res) => {
     try {
-      const tripDetailsData = await tripDetails.findAll({
+      const tripDetailsData = await TripDetails.findAll({
         include: [{ model: Trip }],
       });
       res.status(200).json(tripDetailsData);
@@ -17,7 +17,7 @@ router.get('/', async (req, res) => {
   //grabbing single tripDetails
 router.get('/:id', async (req, res) => {
   try {
-    const tripDetailsData = await tripDetails.findByPk(req.params.id, {
+    const tripDetailsData = await TripDetails.findByPk(req.params.id, {
       include: [{ model: Trip }],
     });
 
@@ -35,7 +35,7 @@ router.get('/:id', async (req, res) => {
 //Creating tripDetails, post request
 router.post('/', async (req, res) => {
     try {
-      const tripDetailsData = await tripDetails.create({
+      const tripDetailsData = await TripDetails.create({
         tripDetails_id: req.body.tripDetails_id,
       });
       res.status(200).json(tripDetailsData);
@@ -46,7 +46,7 @@ router.post('/', async (req, res) => {
 
 router.delete('/:id', async (req, res) => {
   try {
-    const tripDetailsData = await tripDetails.destroy({
+    const tripDetailsData = await TripDetails.destroy({
       where: {
         id: req.params.id,
       },

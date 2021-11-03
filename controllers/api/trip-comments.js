@@ -1,9 +1,9 @@
 const router = require('express').Router();
-const { tripComments, Trip } = require('../../models');
+const { TripComments, Trip } = require('../../models');
 
 router.get('/', async (req, res) => {
     try {
-      const tripCommentsData = await tripComments.findAll({
+      const tripCommentsData = await TripComments.findAll({
         include: [{ model: Trip }, ],
       });
       res.status(200).json(tripCommentsData);
@@ -15,7 +15,7 @@ router.get('/', async (req, res) => {
 
 router.get('/:id', async (req, res) => {
   try {
-    const tripCommentsData = await tripComments.findByPk(req.params.id, {
+    const tripCommentsData = await TripComments.findByPk(req.params.id, {
       include: [{ model: Trip }],
     });
 
@@ -32,7 +32,7 @@ router.get('/:id', async (req, res) => {
 
 router.post('/', async (req, res) => {
     try {
-      const tripCommentsData = await tripComments.create({
+      const tripCommentsData = await TripComments.create({
         comments: req.body.comments,
         trip_id: req.body  //need update to match front end
       });
@@ -44,7 +44,7 @@ router.post('/', async (req, res) => {
   
 router.delete('/:id', async (req, res) => {
     try {
-      const tripCommentsData = await tripComments.destroy({
+      const tripCommentsData = await TripComments.destroy({
         where: {
           id: req.params.id,
         },
