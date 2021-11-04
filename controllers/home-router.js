@@ -1,5 +1,5 @@
 const router = require('express').Router();
-const { User } = require('../models');
+const { User, Trip } = require('../models');
 const withAuth = require('../util/withAuth')
 // use withAuth middleware to redirect from protected routes.
 // const withAuth = require("../util/withAuth");
@@ -17,12 +17,16 @@ router.get('/', withAuth ,  async (req, res) => {
         exclude: ['password'],
         raw: true,
       });
+      const tripsData = await Trip.findAll().catch((err) => { 
+        res.json(err);
+      });
+      const trips = tripsData.map((trip) => trip.get({ plain: true }));
+      res.render('home', {
+        title: 'Home Page',
+        isLoggedIn: req.session.isLoggedIn,
+        user, trips
+      });
     }
-    res.render('home', {
-      title: 'Home Page',
-      isLoggedIn: req.session.isLoggedIn,
-      user,
-    });
   } catch (error) {
     console.error(error);
     res.status(500).send('⛔ Uh oh! An unexpected error occurred.');
@@ -45,7 +49,7 @@ router.get('/addtrip', withAuth, (req, res) => {
 });
 
 // THIS ONE WILL NEED TO BE CHANGED TO /TRIP/:ID BUT RIGHT NOW THIS IS FOR THE PLACEHOLDER
-router.get('/trip', withAuth, (req, res) => {
+router.get('/trip/:id', withAuth, (req, res) => {
   res.render('trip', { 
     title: 'Trip Page', isLoggedIn: req.session.isLoggedIn 
   });
