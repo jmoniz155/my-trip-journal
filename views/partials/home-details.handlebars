@@ -3,9 +3,9 @@
 
 <ul class="list-group list-group-flush">
   {{!-- Each --}}
-  <li class="list-group-item"><a href="#">New York</a></li>
-  <li class="list-group-item"><a href="#">Los Angeles</a></li>
-  <li class="list-group-item"><a href="#">Seattle</a></li>
+  {{#each trips as |trip|}}
+  <li class="list-group-item"><a href="/trip/{{trip.id}}">{{trip.location}}</a></li>
   {{!-- end each --}}
+  {{/each}}
   <li class="list-group-item add-trip"><a href="/addtrip">Add a Trip</a></li>
 </ul>
