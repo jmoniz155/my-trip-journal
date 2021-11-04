@@ -3,8 +3,8 @@ const handleNewCommentSubmit = async (event) => {
   try {
     const comment = document.querySelector('#comment').value.trim();
     const tripid = document.querySelector('#commentlink').value.trim();
-
-    const commentResponse = await fetch('/api/comment', {
+    
+    const commentResponse = await fetch('/api/comments', {
       method: 'POST',
       body: JSON.stringify({ comment, tripid }),
       headers: {
@@ -17,7 +17,7 @@ const handleNewCommentSubmit = async (event) => {
       return;
     }
 
-    document.location.reload();
+    // document.location.reload();
     
   } catch (error) {
     console.log(error);

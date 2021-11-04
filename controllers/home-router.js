@@ -76,8 +76,17 @@ router.get('/trip/:id', withAuth, async (req, res) => {
         ]
       });
       const trip = tripData.get({ plain: true });
+      
+      const commentData = await TripComments.findAll().catch((err) => { 
+        res.json(err);
+      });
+      const comment = commentData.map((comment) => comment.get({ plain: true }));
+
+      console.log(trip);
+      console.log(comment);
+      
       res.render('trip', { 
-        title: 'Trip Page', isLoggedIn: req.session.isLoggedIn, trip 
+        title: 'Trip Page', isLoggedIn: req.session.isLoggedIn, trip, comment 
       });
     }
   } catch (error) {
