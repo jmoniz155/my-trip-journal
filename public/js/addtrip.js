@@ -1,8 +1,4 @@
-console.log("hello");
-
-
 const handleNewTripSubmit = async (event) => {
-  console.log("hello2");
   event.preventDefault();
   try {
     const location = document.querySelector('#location').value.trim();

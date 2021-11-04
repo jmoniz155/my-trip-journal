@@ -46,16 +46,17 @@
   <br>
   <div class="row justify-content-center">
     <div class="col-10">
+      <input type="hidden" id="commentlink" name="custId" value="{{trip.id}}">
       {{> comment}}
     </div>
   </div>
   <br>
   <div class="row justify-content-center">
     <div class="col-10">
-      <form>
+      <form class="newCommentSubmit">
         <div class="form-group">
           <label for="formGroupExampleInput1">Do you have any further comments?</label>
-          <input type="text" class="form-control" id="formGroupExampleInput1">
+          <input type="text" class="form-control" id="comment">
         </div>
         <button type="submit" class="btn">Submit</button>
       </form>
