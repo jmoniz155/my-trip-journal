@@ -1,36 +1,41 @@
 <div class="container">
-  <h1>My New York Trip</h1>
+  <div class="row justify-content-center" style="text-align: center">
+    <h1>My New York Trip</h1>
+  </div>
+  <div class="row justify-content-center" style="text-align: center">
+    <a href="#">Edit Trip</a>
+  </div>
+  <div class="row justify-content-center" style="text-align: center">
+    <a href="#">Delete Trip</a>
+  </div>
+
     
   {{!-- <div class="row row1">
     <img class="tripImage" style="width: 100%"src="https://imagesvc.meredithcorp.io/v3/mm/image?q=85&c=sc&poi=face&w=1800&h=900&url=https%3A%2F%2Fstatic.onecms.io%2Fwp-content%2Fuploads%2Fsites%2F28%2F2021%2F02%2F19%2Fnew-york-city-evening-NYCTG0221.jpg">
   </div> --}}
-    <div class="row row1">
-    <img class="tripImage" style="width: 100%"src="https://api.pexels.com/v1/search?query=newyork&orientation=landscape&page=1&per_page=1@appid=563492ad6f917000010000014087bf308d61417fada3aa20de53ca31">
+  <div class="row justify-content-center" style="text-align: center">
+    <div class="header">
+      <form>
+        <input type="text" placeholder="Search">
+        <ion-icon name="search-outline"></ion-icon>
+      </form>
+    </div>
   </div>
-{{!-- <div class="container">
-      <div class="header">
-        <form>
-          <input type="text" placeholder="Search">
-          <ion-icon name="search-outline"></ion-icon>
-        </form>
-      </div>
-      <div class="gallery">
-        
-      </div>
-      <a class="load-more" data-img="curated"></a>
-    </div> --}}
-
-  <br>
-
-  <div class="row row2" style="text-align: center">   
-    <div class="col">New York City</div>
-    <div class="col">6/1/2021 - 6/15-2021</div>
-    <div class="col">4/5</div>
+  <div class="row justify-content-center" style="text-align: center">
+    <div class="gallery">
+      
+    </div>
+    <a class="load-more" data-img="curated"></a>
   </div>
 
   <br>
-
-    <div class="row row3">
+  <div class="row justify-content-center" style="text-align: center">   
+    <div class="col-5">6/1/2021 - 6/15/2021</div>
+    <div class="col-5">4/5</div>
+  </div>
+  <br>
+  <div class="row justify-content-center">
+    <div class="col-10">
       <div class="card">
         <ul class="list-group list-group-flush">
           <li class="list-group-item">The best food I ate was Falafel.</li>
@@ -40,23 +45,25 @@
         </ul>
       </div>
     </div>
-
-    <br>
-    
-    <div class="row row4">
+  </div>
+  <br>
+  <div class="row justify-content-center">
+    <div class="col-10">
       {{> comment}}
     </div>
- 
-    <br>
-
-    <form>
-      <div class="form-group">
-        <label for="formGroupExampleInput1">Do you have any further comments?</label>
-        <input type="text" class="form-control" id="formGroupExampleInput1">
-      </div>
-      <button type="submit" class="btn btn-primary">Submit</button>
-    </form>
-    
+  </div>
+  <br>
+  <div class="row justify-content-center">
+    <div class="col-10">
+      <form>
+        <div class="form-group">
+          <label for="formGroupExampleInput1">Do you have any further comments?</label>
+          <input type="text" class="form-control" id="formGroupExampleInput1">
+        </div>
+        <button type="submit" class="btn">Submit</button>
+      </form>
+    </div>
+  </div>
 </div>
 {{> script}}
 <script src='/js/index.js'></script>
