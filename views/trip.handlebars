@@ -44,12 +44,14 @@
     </div>
   </div>
   <br>
-  <div class="row justify-content-center">
-    <div class="col-10">
-      <input type="hidden" id="commentlink" name="custId" value="{{trip.id}}">
-      {{> comment}}
+  {{#each comments as |comment|}}
+    <div class="row justify-content-center">
+      <div class="col-10">
+        <input type="hidden" id="commentlink" name="custId" value="{{trip.id}}">
+        {{> comment}}
+      </div>
     </div>
-  </div>
+  {{/each}}
   <br>
   <div class="row justify-content-center">
     <div class="col-10">
