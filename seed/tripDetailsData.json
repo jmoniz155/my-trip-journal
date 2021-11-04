@@ -1,0 +1,34 @@
+[
+  {
+    "rating": 4,
+    "food": "falafel",
+    "experience": "I ran into Nicholas Cage",
+    "lesson": "Nicholas Cage is very tall",
+    "revisit": "absolutely",
+    "trip_id": "1"
+  },
+  {
+    "rating": 3.5,
+    "food": "tomato",
+    "experience": "I fell and did three cartwheels",
+    "lesson": "cartwheels are hard",
+    "revisit": "not any time soon",
+    "trip_id": "2"
+  },
+  {
+    "rating": 3,
+    "food": "spaghetti",
+    "experience": "I sang many songs",
+    "lesson": "Singing is fun",
+    "revisit": "someday soon",
+    "trip_id": "3"
+  },
+  {
+    "rating": 5,
+    "food": "burger",
+    "experience": "eating burgers",
+    "lesson": "burgers are good",
+    "revisit": "yes",
+    "trip_id": "4"
+  }
+]
