@@ -1,8 +1,9 @@
+console.log("weow")
 class PhotoGallery{
     constructor(){
       this.API_KEY="563492ad6f917000010000014087bf308d61417fada3aa20de53ca31"
       this.galleryDIv = document.querySelector('.gallery');
-      this.searchForm = document.querySelector('.header form');
+      this.searchForm = document.querySelector('.container form');
       this.loadMore = document.querySelector('.load-more');
     //   this.logo = document.querySelector('.logo')
       this.pageIndex = 1;
@@ -14,10 +15,10 @@ class PhotoGallery{
         this.pageIndex = 1;
         this.getSearchedImages(e);
       });
-
+      
 
     }
- 
+    
     async fetchImages(baseURL){
       const response = await fetch(baseURL, {
         method: 'GET',
