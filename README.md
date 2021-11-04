@@ -1,4 +1,53 @@
-# Express-Handlebars Boilerplate
+# My Trip Journal With Express-Handlebars Boilerplate
+
+## Description
+
+This travler application is an easy way for a user to write down and track thier travel experience's with minimal effort. First sign up with My Trip Journal. This allows a user to add, edit and delete a trip experience. Simply answer the questions and it will generate your trip experience answers with a picture of the location you visited.
+
+
+## Table of Contents
+
+[Description](#description)
+
+[Study-Material](#Study-Material)
+
+[Features](#features)
+
+[Links](#links)
+
+
+## Study-Material
+
+[Sequelize](https://sequelize.org/master/manual/getting-started.html#connecting-to-a-database)
+
+[Express Middleware](https://expressjs.com/en/guide/writing-middleware.html)
+
+[Express Handlebars](https://www.npmjs.com/package/express-handlebars)
+
+[Routing Controllers](https://www.npmjs.com/package/routing-controllers)
+
+[Node.js Secret Key](https://www.npmjs.com/package/secret-key)
+
+[DotEnv Package](https://www.npmjs.com/package/dotenv)
+
+[Node.js Path](https://www.npmjs.com/package/path)
+
+[Inquirer](https://www.npmjs.com/package/inquirer)
+
+## Features
+
+Front End Javascript,
+Back End Express, 
+Node.js,
+Secret Key, .env file,
+Pexels API
+
+## Links
+
+[GitHub Repository](https://github.com/jmoniz155/my-trip-journal)
+
+
+# Boilerplate
 
 This boilerplate may be used as a starting point for building a full-stack app with Handlebars, Express, and Sequelize/MySQL. This boilerplate if configured for easy deployment on Heroku with JAWSDB add-on.
 
