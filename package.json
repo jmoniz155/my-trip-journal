@@ -3,6 +3,7 @@
   "version": "1.0.0",
   "description": "This boilerplate may be used as a starting point for building a full-stack app with Handlebars, Express, and Sequelize/MySQL.",
   "private": true,
+  "main": "server.js",
   "scripts": {
     "start": "node server.js",
     "test": "npm run lint",
