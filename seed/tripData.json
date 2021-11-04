@@ -1,0 +1,26 @@
+[
+  {
+    "location": "New York City",
+    "startDate": "6/1/2021",
+    "endDate": "6/15/2021",
+    "user_id": "1"
+  },
+  {
+    "location": "Seattle",
+    "startDate": "3/1/2021",
+    "endDate": "3/15/2021",
+    "user_id": "1"
+  },
+  {
+    "location": "San Luis Obispo",
+    "startDate": "4/1/2021",
+    "endDate": "4/15/2021",
+    "user_id": "1"
+  },
+  {
+    "location": "Chicago",
+    "startDate": "7/1/2021",
+    "endDate": "7/15/2021",
+    "user_id": "1"
+  }
+]
