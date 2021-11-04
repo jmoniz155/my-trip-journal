@@ -43,6 +43,10 @@ h1 {
   line-height: 1;
 }
 
+.btn-light {
+  background-color: var(--color-four);
+}
+
 .btn-logout {
   color: black;
 }
