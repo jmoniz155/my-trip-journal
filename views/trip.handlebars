@@ -44,15 +44,15 @@
     </div>
   </div>
   <br>
-  {{#each comments as |comment|}}
+  {{#each trip.TripComments as |comment|}}
     <div class="row justify-content-center">
       <div class="col-10">
         <input type="hidden" id="commentlink" name="custId" value="{{trip.id}}">
         {{> comment}}
       </div>
     </div>
-  {{/each}}
   <br>
+  {{/each}}
   <div class="row justify-content-center">
     <div class="col-10">
       <form class="newCommentSubmit">
