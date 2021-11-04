@@ -1,5 +1,5 @@
 const router = require('express').Router();
-const { User, Trip, TripDetails } = require('../models');
+const { User, Trip, TripDetails, TripComments } = require('../models');
 const withAuth = require('../util/withAuth')
 // use withAuth middleware to redirect from protected routes.
 // const withAuth = require("../util/withAuth");
@@ -63,6 +63,14 @@ router.get('/trip/:id', withAuth, async (req, res) => {
               'experience',
               'lesson',
               'revisit'
+            ]
+          },
+          {
+            model: TripComments,
+            attributes: [
+              'id',
+              'comments',
+              'trip_id'
             ]
           }
         ]
