@@ -4,7 +4,7 @@ const handleNewCommentSubmit = async (event) => {
     const comment = document.querySelector('#comment').value.trim();
     const tripid = document.querySelector('#commentlink').value.trim();
 
-    const tripResponse = await fetch('/api/comment', {
+    const commentResponse = await fetch('/api/comment', {
       method: 'POST',
       body: JSON.stringify({ comment, tripid }),
       headers: {
@@ -12,7 +12,7 @@ const handleNewCommentSubmit = async (event) => {
       },
     });
 
-    if (!tripResponse.ok) {
+    if (!commentResponse.ok) {
       alert('Failed to create Trip.');
       return;
     }
