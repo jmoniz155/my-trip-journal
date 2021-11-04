@@ -17,7 +17,7 @@ router.get('/', withAuth ,  async (req, res) => {
         exclude: ['password'],
         raw: true,
       });
-      const tripsData = await Trip.findAll().catch((err) => { 
+      const tripsData = await Trip.findAll({where: {user_id: req.session.userId }}).catch((err) => { 
         res.json(err);
       });
       const trips = tripsData.map((trip) => trip.get({ plain: true }));
@@ -77,16 +77,16 @@ router.get('/trip/:id', withAuth, async (req, res) => {
       });
       const trip = tripData.get({ plain: true });
       
-      const commentData = await TripComments.findAll().catch((err) => { 
-        res.json(err);
-      });
-      const comment = commentData.map((comment) => comment.get({ plain: true }));
+      // const commentData = await TripComments.findAll({where: {trip_id: req.params.id }}).catch((err) => { 
+      //   res.json(err);
+      // });
+      // const comment = commentData.map((comment) => comment.get({ plain: true }));
 
-      console.log(trip);
-      console.log(comment);
+      // console.log(trip);
+      // console.log(comment);
       
       res.render('trip', { 
-        title: 'Trip Page', isLoggedIn: req.session.isLoggedIn, trip, comment 
+        title: 'Trip Page', isLoggedIn: req.session.isLoggedIn, trip,  
       });
     }
   } catch (error) {
