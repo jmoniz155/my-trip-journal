@@ -28,7 +28,7 @@ const handleNewTripSubmit = async (event) => {
     }
 
     // go to home page
-    window.location.replace('/trip');
+    window.location.replace('/');
   } catch (error) {
     console.log(error);
   }
