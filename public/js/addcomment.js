@@ -27,3 +27,31 @@ const handleNewCommentSubmit = async (event) => {
 document
   .querySelector('.newCommentSubmit')
   .addEventListener('submit', handleNewCommentSubmit);
+
+
+const deleteComment = async (event) => {
+  event.preventDefault();
+  
+  try {
+    const deleteResponse = await fetch('/api/comments/:id', {
+      method: 'delete',
+      headers: {
+        'Content-Type': 'application/json; charset=UTF-8',
+      },
+    });
+
+    if (!deleteResponse.ok) {
+      alert('Failed to create Trip.');
+      return;
+    }
+
+    // document.location.reload();
+    
+  } catch (error) {
+    console.log(error);
+  }
+};
+
+document
+  .querySelector('.delete-btn')
+  .addEventListener('click', deleteComment);
