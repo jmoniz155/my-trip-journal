@@ -1,10 +1,11 @@
 require("dotenv").config();
 const sequelize = require("../config/connection");
-const { User, Trip, TripDetails } = require("../models");
+const { User, Trip, TripDetails, TripComments } = require("../models");
 
 const userData = require("./userData.json");
 const tripData = require("./tripData.json");
 const tripDetailsData = require("./tripDetailsData.json");
+const tripCommentData = require("./tripCommentData.json");
 
 const seedDatabase = async () => {
   try {
@@ -18,6 +19,10 @@ const seedDatabase = async () => {
       returning: true,
     });
     await TripDetails.bulkCreate(tripDetailsData, {
+      individualHooks: true,
+      returning: true,
+    });
+    await TripComments.bulkCreate(tripCommentData, {
       individualHooks: true,
       returning: true,
     });
