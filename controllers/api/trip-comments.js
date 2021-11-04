@@ -36,7 +36,7 @@ router.post('/', async (req, res) => {
         trip_id: req.body.tripid,  //need update to match front end
         comments: req.body.comment
       });
-      res.status(200).json(...tripCommentsData);
+      res.status(200).json(tripCommentsData);
     } catch (err) {
       console.log(err);
       console.log(req.body);
