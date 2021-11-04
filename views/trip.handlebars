@@ -47,7 +47,7 @@
   {{#each trip.TripComments as |comment|}}
     <div class="row justify-content-center">
       <div class="col-10">
-        <input type="hidden" id="commentlink" name="custId" value="{{trip.id}}">
+        <input type="hidden" id="commentlink" name="custId" value={{id}}>
         {{> comment}}
       </div>
     </div>
@@ -67,6 +67,7 @@
 </div>
 {{> script}}
 <script src='/js/index.js'></script>
+<script src='/js/addcomment.js'></script>
 
 
     {{!-- <div class="row row3">

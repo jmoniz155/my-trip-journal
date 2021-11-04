@@ -2,11 +2,11 @@ const handleNewCommentSubmit = async (event) => {
   event.preventDefault();
   try {
     const comment = document.querySelector('#comment').value.trim();
-    const tripid = document.querySelector('#commentlink').value.trim();
-    
+    const tripid = document.querySelector('#commentlink').value;
+    console.log(tripid);
     const commentResponse = await fetch('/api/comments', {
       method: 'POST',
-      body: JSON.stringify({ comment, tripid }),
+      body: JSON.stringify({ tripid, comment }),
       headers: {
         'Content-Type': 'application/json; charset=UTF-8',
       },
@@ -17,7 +17,7 @@ const handleNewCommentSubmit = async (event) => {
       return;
     }
 
-    // document.location.reload();
+    document.location.reload();
     
   } catch (error) {
     console.log(error);
