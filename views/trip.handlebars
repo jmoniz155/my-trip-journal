@@ -1,6 +1,6 @@
 <div class="container">
   <div class="row justify-content-center" style="text-align: center">
-    <h1>My New York Trip</h1>
+    <h1>My {{trip.location}} Trip</h1>
   </div>
   <div class="row justify-content-center" style="text-align: center">
     <a href="#">Edit Trip</a>
@@ -30,18 +30,18 @@
 
   <br>
   <div class="row justify-content-center" style="text-align: center">   
-    <div class="col-5">6/1/2021 - 6/15/2021</div>
-    <div class="col-5">4/5</div>
+    <div class="col-5">{{trip.startDate}} - {{trip.endDate}}</div>
+    <div class="col-5">{{trip.TripDetail.rating}}/5</div>
   </div>
   <br>
   <div class="row justify-content-center">
     <div class="col-10">
       <div class="card">
         <ul class="list-group list-group-flush">
-          <li class="list-group-item">The best food I ate was Falafel.</li>
-          <li class="list-group-item">The most unexpected experience was running into an old friend!</li>
-          <li class="list-group-item">I learned how important it is to hydrate while standing in line at a museum.</li>
-          <li class="list-group-item">I will definitely go back.</li>
+          <li class="list-group-item">The best food I ate was {{trip.TripDetail.food}}.</li>
+          <li class="list-group-item">The most unexpected experience was {{trip.TripDetail.experience}}!</li>
+          <li class="list-group-item">I learned {{trip.TripDetail.lesson}}.</li>
+          <li class="list-group-item">Will I revisit? {{trip.TripDetail.revisit}}.</li>
         </ul>
       </div>
     </div>
