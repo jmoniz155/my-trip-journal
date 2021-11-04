@@ -13,7 +13,7 @@ TripDetails.init(
             autoIncrement: true,
           },
         rating: {
-            type: DataTypes.DECIMAL(10, 2), 
+            type: DataTypes.DECIMAL(10, 1), 
             allowNull: false,
             validate: {
                 isDecimal: true
