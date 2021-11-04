@@ -1,5 +1,5 @@
 const router = require('express').Router();
-const { User, Trip, TripDetails } = require('../models');
+const { User, Trip, TripDetails, TripComments } = require('../models');
 const withAuth = require('../util/withAuth')
 // use withAuth middleware to redirect from protected routes.
 // const withAuth = require("../util/withAuth");
@@ -64,12 +64,29 @@ router.get('/trip/:id', withAuth, async (req, res) => {
               'lesson',
               'revisit'
             ]
+          },
+          {
+            model: TripComments,
+            attributes: [
+              'id',
+              'comments',
+              'trip_id'
+            ]
           }
         ]
       });
       const trip = tripData.get({ plain: true });
+      
+      const commentData = await TripComments.findAll().catch((err) => { 
+        res.json(err);
+      });
+      const comment = commentData.map((comment) => comment.get({ plain: true }));
+
+      console.log(trip);
+      console.log(comment);
+      
       res.render('trip', { 
-        title: 'Trip Page', isLoggedIn: req.session.isLoggedIn, trip 
+        title: 'Trip Page', isLoggedIn: req.session.isLoggedIn, trip, comment 
       });
     }
   } catch (error) {

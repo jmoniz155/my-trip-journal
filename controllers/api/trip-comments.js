@@ -33,10 +33,10 @@ router.get('/:id', async (req, res) => {
 router.post('/', async (req, res) => {
     try {
       const tripCommentsData = await TripComments.create({
-        comments: req.body.comments,
-        trip_id: req.body  //need update to match front end
+        comments: req.body.comment,
+        trip_id: req.body.tripid  //need update to match front end
       });
-      res.status(200).json(tripCommentsData);
+      res.status(200).json(...tripCommentsData);
     } catch (err) {
       res.status(400).json(err);
     }

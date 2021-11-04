@@ -3,9 +3,6 @@
     <h1>My <span id="tripName"> {{trip.location}}</span> Trip</h1>
   </div>
   <div class="row justify-content-center" style="text-align: center">
-    <a href="#">Edit Trip</a>
-  </div>
-  <div class="row justify-content-center" style="text-align: center">
     <a href="#">Delete Trip</a>
   </div>
 
@@ -47,18 +44,21 @@
     </div>
   </div>
   <br>
-  <div class="row justify-content-center">
-    <div class="col-10">
-      {{> comment}}
+  {{#each comments as |comment|}}
+    <div class="row justify-content-center">
+      <div class="col-10">
+        <input type="hidden" id="commentlink" name="custId" value="{{trip.id}}">
+        {{> comment}}
+      </div>
     </div>
-  </div>
+  {{/each}}
   <br>
   <div class="row justify-content-center">
     <div class="col-10">
-      <form>
+      <form class="newCommentSubmit">
         <div class="form-group">
           <label for="formGroupExampleInput1">Do you have any further comments?</label>
-          <input type="text" class="form-control" id="formGroupExampleInput1">
+          <input type="text" class="form-control" id="comment">
         </div>
         <button type="submit" class="btn">Submit</button>
       </form>
