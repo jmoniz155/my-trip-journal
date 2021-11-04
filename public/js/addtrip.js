@@ -18,6 +18,7 @@ const handleNewTripSubmit = async (event) => {
       },
     });
 
+
     if (!tripResponse.ok) {
       alert('Failed to create Trip.');
       return;

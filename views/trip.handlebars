@@ -1,6 +1,6 @@
 <div class="container">
   <div class="row justify-content-center" style="text-align: center">
-    <h1>My {{trip.location}} Trip</h1>
+    <h1>My <span id="tripName"> {{trip.location}}</span> Trip</h1>
   </div>
   <div class="row justify-content-center" style="text-align: center">
     <a href="#">Delete Trip</a>
@@ -12,10 +12,10 @@
   </div> --}}
   <div class="row justify-content-center" style="text-align: center">
     <div class="header">
-      <form>
+      {{!-- <form>
         <input type="text" placeholder="Search">
         <ion-icon name="search-outline"></ion-icon>
-      </form>
+      </form> --}}
     </div>
   </div>
   <div class="row justify-content-center" style="text-align: center">
