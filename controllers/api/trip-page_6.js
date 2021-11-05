@@ -71,7 +71,7 @@ try {
     const tripData = await Trip.destroy({
     where: {
         id: req.params.id,
-        user_id: req.session.user_id,
+        // user_id: req.session.user_id,
     },
     });
 

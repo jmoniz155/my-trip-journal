@@ -2,7 +2,7 @@ console.log("Heelloooo")
 
 const deleteTrip = async function (event) {
     event.preventDefault();
-    
+
     try {
         this.value
         console.log(this.value)
@@ -18,8 +18,8 @@ const deleteTrip = async function (event) {
           return;
         }
     
-        document.location.reload();
-        
+        // document.location.reload();
+        window.location.replace('/');
       } catch (error) {
         console.log(error);
       }
