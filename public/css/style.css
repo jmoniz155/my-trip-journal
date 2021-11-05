@@ -29,6 +29,10 @@ h1 {
   margin-bottom: 15px
 }
 
+h3 {
+  color: var(--color-five);
+}
+
 .btn {
   background-color: var(--color-five);
   border: none;
@@ -44,7 +48,9 @@ h1 {
 }
 
 .btn-light {
-  background-color: var(--color-four);
+  border: var(--color-five) solid 2px;
+  background-color: white;
+  color: black;
 }
 
 .btn-logout {
