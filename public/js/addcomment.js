@@ -28,12 +28,16 @@ document
   .querySelector('.newCommentSubmit')
   .addEventListener('submit', handleNewCommentSubmit);
 
+const commentId = document.querySelector('input[name="post-id"]').value;
+//const commentId = document.querySelectorAll('.delete-btn').value;
+console.log(commentId)
 
 const deleteComment = async (event) => {
   event.preventDefault();
   
   try {
-    const deleteResponse = await fetch('/api/comments/:id', {
+    console.log(commentId)
+    const deleteResponse = await fetch(`/api/comments/${commentId}`, {
       method: 'delete',
       headers: {
         'Content-Type': 'application/json; charset=UTF-8',
