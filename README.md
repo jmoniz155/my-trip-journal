@@ -1,5 +1,6 @@
 # My Trip Journal 
 
+
 ## Description
 
 This travler application is an easy way for a user to write down and track thier travel experience's with minimal effort. First sign up with My Trip Journal. This allows a user to add and delete a trip experience. Simply answer the questions and it will generate your trip experience answers with a picture of the location you visited.
@@ -15,6 +16,7 @@ This travler application is an easy way for a user to write down and track thier
 
 [Collaborators](#collaborators)
 
+
 ## Features
 
 Front End Javascript,
@@ -23,7 +25,24 @@ Node.js,
 Secret Key, .env file,
 Pexels API
 
-When the user navigates to the homepage, they will see a brief description of what the app offers so they know what they are signing up for. Upon signing up/logging in, the user is presented with a list of the previously created trips as well as an option to create a new trip. Each trip page contains the answers the user provides on the add trip page as well as an image of the city they are logging. 
+When the user navigates to the homepage, they will see a brief description of what the app offers so they know what they are signing up for. 
+
+<img alt="start page" src="./assets/images/start-page.png.png" height="500">
+
+Upon signing up/logging in, the user is presented with a list of the previously created trips as well as an option to create a new trip. 
+
+<img alt="new user home page" src="./assets/images/new-user-home-page.png.png" height="500">
+<img alt="add trip page" src="./assets/images/add-trip-page.png.png" height="500">
+<img alt="home page with trip" src="./assets/images/home-page-with-trip.png.png" height="500">
+
+Each trip page contains the answers the user provides on the add trip page as well as an image of the city they are logging. 
+
+<img alt="new york trip page" src="./assets/images/new-york-trip-page.png.png" height="500">
+
+The trip page also has an option to add/delete a comment.
+
+<img alt="comment" src="./assets/images/comment.png" height="200">
+
 
 ## Links
 
