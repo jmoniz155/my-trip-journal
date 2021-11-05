@@ -31,6 +31,7 @@ const handleNewTripSubmit = async (event) => {
   }
 };
 
+
 document
   .querySelector('.newTripSubmit')
   .addEventListener('submit', handleNewTripSubmit);
